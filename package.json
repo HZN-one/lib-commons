@@ -1,0 +1,21 @@
+{
+  "name": "@hzn-one/commons",
+  "version": "0.0.1",
+  "description": "A npm package that provide a common function and interface",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HZN-one/lib-commons"
+  },
+  "keywords": [],
+  "author": "PT HZN Teknologi Indonesia",
+  "license": "ISC"
+}

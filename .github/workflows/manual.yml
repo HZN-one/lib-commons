@@ -1,0 +1,29 @@
+name: NPM publish CD workflow
+
+on:
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.release.target_commitish }}
+    - name: Use Node.js 12 and set .npmrc for npm registry
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+        registry-url: https://registry.npmjs.org/
+        scope: '@hzn-one'
+    - run: git config --global user.name "hzn-one ci/cd"
+    - run: git config --global user.email "ci.cd@hzn.one"
+    - run: npm version ${{ github.event.release.tag_name }}
+    - run: npm install
+    - run: npm run build
+    - run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - run: git push
+      env:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
