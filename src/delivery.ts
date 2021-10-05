@@ -1,7 +1,7 @@
 export interface IPriceStandarObject {
   name: string;
   service_type: string;
-  vehicle_type?: string;
+  vehicle_type: string;
   currency: string;
   amount: number;
   distance: number;
