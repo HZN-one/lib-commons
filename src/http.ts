@@ -17,11 +17,11 @@ export const Http = {
    *
    *    res.json(Http.response())
    */
-  response: (isSuccess: boolean, message: string, data: any) => {
+  response: (isSuccess: boolean, message: string, data: any = null) => {
     const result: IResult = {
       meta: {
         status: isSuccess ? "success" : "failed",
-        message: isSuccess ? "ok" : message,
+        message: isSuccess && message === "" ? "ok" : message,
       },
     };
 
