@@ -17,3 +17,8 @@ A npm package that provide a common function and interface
 | Http.response                 | A function to standarize a http response             |
 | Map.distance                  | A function to calculate distance between 2 locations |
 | Delivery.toPriceStandarObject | A function to standarize price object                |
+
+## Exported Interface
+
+| Interface | Description |
+| --------- | ----------- |
