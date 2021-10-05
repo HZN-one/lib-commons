@@ -1,9 +1,9 @@
 export interface IPriceStandarObject {
   name: string;
   service_type: string;
-  vehicle_type: string;
+  vehicle_type?: string;
   currency: string;
-  amount: string;
+  amount: number;
   distance: number;
 }
 export interface ICoordinate {
