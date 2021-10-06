@@ -34,7 +34,6 @@ export interface IItem {
   quantity: number;
   description?: string;
   price: number;
-  invoiceNo?: string;
   dimension: {
     height: number;
     width: number;
@@ -43,12 +42,27 @@ export interface IItem {
   };
 }
 export interface IDestination extends IAddress {
+  items: IItem[];
+}
+
+export interface IDestinationForOrder extends IAddress {
   recipient: IContact;
   items: IItem[];
 }
 export interface IPriceRequestBody {
   origin: IAddress;
   destinations: IDestination[];
+}
+
+export interface IOrderRequestBody {
+  merchantOrderId: string;
+  serviceType: string;
+  origin: IAddress;
+  sender: IContact;
+  destinations: IDestinationForOrder[];
+  hasInsurance: Boolean;
+  insuranceAmount: number;
+  insuranceAmountFee: number;
 }
 
 export interface IOrderStandardObject {
