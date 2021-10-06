@@ -14,24 +14,25 @@ A npm package that provide a common function and interface
 
 ## Exported Method
 
-| Class                         | Description                                          |
-| ----------------------------- | ---------------------------------------------------- |
-| Http.response                 | A function to standarize a http response             |
-| Map.distance                  | A function to calculate distance between 2 locations |
-| Util.pick                     | A function to pick some property from object         |
-| ApiError                      | A class for API Error object                         |
-| Delivery.toPriceStandarObject | A function to standarize price object                |
-| Delivery.toOrderStandarObject | A function to standarize order object                |
+| Class                          | Description                                          |
+| ------------------------------ | ---------------------------------------------------- |
+| Http.response                  | A function to standarize a http response             |
+| Map.distance                   | A function to calculate distance between 2 locations |
+| Util.pick                      | A function to pick some property from object         |
+| ApiError                       | A class for API Error object                         |
+| Delivery.toPriceStandardObject | A function to standarize price object                |
+| Delivery.toOrderStandardObject | A function to standarize order object                |
 
 ## Exported Interface
 
-| Interface           | Description |
-| ------------------- | ----------- |
-| IPriceStandarObject | ...         |
-| ICoordinate         | ...         |
-| IAddress            | ...         |
-| IContact            | ...         |
-| IItem               | ...         |
-| IDestination        | ...         |
-| IPriceRequestBody   | ...         |
-| IOrderStandarObject | ...         |
+| Interface            | Description |
+| -------------------- | ----------- |
+| IPriceStandardObject | ...         |
+| ICoordinate          | ...         |
+| IAddress             | ...         |
+| IContact             | ...         |
+| IItem                | ...         |
+| IDestination         | ...         |
+| IOrderStandardObject | ...         |
+| IPriceRequestBody    | ...         |
+| IOrderRequestBody    | ...         |
