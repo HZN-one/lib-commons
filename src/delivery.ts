@@ -1,4 +1,4 @@
-export interface IPriceStandarObject {
+export interface IPriceStandardObject {
   name: string;
   serviceType: string;
   vehicleType: string;
@@ -47,12 +47,11 @@ export interface IDestination extends IAddress {
   items: IItem[];
 }
 export interface IPriceRequestBody {
-  sender: IContact;
   origin: IAddress;
   destinations: IDestination[];
 }
 
-export interface IOrderStandarObject {
+export interface IOrderStandardObject {
   deliveryId: string;
 }
 
@@ -60,15 +59,15 @@ export const Delivery = {
   /**
    * A function to standarize a price object
    *
-   * @param data     Object reference IPriceStandarObject (This interface exported)
+   * @param data     Object reference IPriceStandardObject (This interface exported)
    * @example
    *
    *    const standarizeData = Delivery.toPriceStandarObject(data);
    */
-  toPriceStandarObject(data: IPriceStandarObject) {
+  toPriceStandardObject(data: IPriceStandardObject) {
     return data;
   },
-  toOrderStandarObject(data: IOrderStandarObject) {
+  toOrderStandardObject(data: IOrderStandardObject) {
     return data;
   },
 };
