@@ -53,6 +53,10 @@ export interface IPriceRequestBody {
   destinations: IDestination[];
 }
 
+export interface IOrderStandarObject {
+  deliveryID: string;
+}
+
 export const Delivery = {
   /**
    * A function to standarize a price object
@@ -63,6 +67,9 @@ export const Delivery = {
    *    const standarizeData = Delivery.toPriceStandarObject(data);
    */
   toPriceStandarObject(data: IPriceStandarObject) {
+    return data;
+  },
+  toOrderStandarObject(data: IOrderStandarObject) {
     return data;
   },
 };
