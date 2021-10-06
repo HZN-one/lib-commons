@@ -4,6 +4,7 @@ interface IResult {
     message: string;
   };
   data?: any;
+  stack?: string;
 }
 
 export const Http = {
@@ -13,11 +14,17 @@ export const Http = {
    * @param isSuccess   Boolean
    * @param message     string
    * @param data        any
+   * @param stack        string
    * @example
    *
-   *    res.json(Http.response())
+   *    res.json(Http.response(true, "", { name: '' }, ''))
    */
-  response: (isSuccess: boolean, message: string, data: any = null) => {
+  response: (
+    isSuccess: boolean,
+    message: string,
+    data: any = null,
+    stack: string = ""
+  ) => {
     const result: IResult = {
       meta: {
         status: isSuccess ? "success" : "failed",
@@ -26,6 +33,8 @@ export const Http = {
     };
 
     if (isSuccess) result.data = data;
+
+    if (stack !== "") result.stack = stack;
 
     return result;
   },
