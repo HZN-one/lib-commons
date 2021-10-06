@@ -1,7 +1,7 @@
 export interface IPriceStandarObject {
   name: string;
-  service_type: string;
-  vehicle_type: string;
+  serviceType: string;
+  vehicleType: string;
   currency: string;
   amount: number;
   distance: number;
@@ -43,7 +43,6 @@ export interface IItem {
   };
 }
 export interface IDestination extends IAddress {
-  deliveryID?: string;
   recipient: IContact;
   items: IItem[];
 }
@@ -54,7 +53,7 @@ export interface IPriceRequestBody {
 }
 
 export interface IOrderStandarObject {
-  deliveryID: string;
+  deliveryId: string;
 }
 
 export const Delivery = {
