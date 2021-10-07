@@ -50,6 +50,8 @@ export interface IDestinationForOrder extends IAddress {
   items: IItem[];
 }
 export interface IPriceRequestBody {
+  serviceType?: string;
+  sender: IContact;
   origin: IAddress;
   destinations: IDestination[];
 }
