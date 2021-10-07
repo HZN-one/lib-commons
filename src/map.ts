@@ -1,7 +1,4 @@
-interface ILocation {
-  lat: number;
-  long: number;
-}
+import { ICoordinate } from ".";
 
 type IDistanceUnit = "M" | "KM" | "Miles";
 
@@ -9,8 +6,8 @@ export const Map = {
   /**
    * A function to calculate distance between 2 point
    *
-   * @param origin          ILocation
-   * @param destination     ILocation
+   * @param origin          ICoordinate
+   * @param destination     ICoordinate
    * @param data        any
    * @example
    *
@@ -20,16 +17,19 @@ export const Map = {
    *    )
    */
   distance: (
-    origin: ILocation,
-    destination: ILocation,
+    origin: ICoordinate,
+    destination: ICoordinate,
     unit: IDistanceUnit = "M"
   ): number => {
-    if (origin.lat == destination.lat && origin.long == destination.long) {
+    if (
+      origin.latitude == destination.latitude &&
+      origin.longitude == destination.longitude
+    ) {
       return 0;
     } else {
-      var radlat1 = (Math.PI * origin.lat) / 180;
-      var radlat2 = (Math.PI * destination.lat) / 180;
-      var theta = origin.long - destination.long;
+      var radlat1 = (Math.PI * origin.latitude) / 180;
+      var radlat2 = (Math.PI * destination.latitude) / 180;
+      var theta = origin.longitude - destination.longitude;
       var radtheta = (Math.PI * theta) / 180;
       var dist =
         Math.sin(radlat1) * Math.sin(radlat2) +
