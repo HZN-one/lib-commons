@@ -12,8 +12,8 @@ export const Map = {
    * @example
    *
    *    Map.distance(
-   *      { lat: 0, long: 0 },
-   *      { lat: 0, long: 0 }
+   *      { latitude: 0, longitude: 0 },
+   *      { latitude: 0, longitude: 0 }
    *    )
    */
   distance: (
