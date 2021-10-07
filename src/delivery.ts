@@ -42,13 +42,10 @@ export interface IItem {
   };
 }
 export interface IDestination extends IAddress {
-  items: IItem[];
-}
-
-export interface IDestinationForOrder extends IAddress {
   recipient: IContact;
   items: IItem[];
 }
+
 export interface IPriceRequestBody {
   serviceType?: string;
   sender: IContact;
@@ -61,7 +58,7 @@ export interface IOrderRequestBody {
   serviceType: string;
   origin: IAddress;
   sender: IContact;
-  destinations: IDestinationForOrder[];
+  destinations: IDestination[];
   hasInsurance: Boolean;
   insuranceAmount: number;
   insuranceAmountFee: number;
