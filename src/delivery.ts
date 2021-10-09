@@ -71,7 +71,7 @@ export interface IOrderStandardObject {
   deliveryId: string;
 }
 
-declare namespace IOrderDetail {
+export namespace IOrderDetail {
   interface Item {
     name: string;
     quantity: string;
@@ -108,7 +108,7 @@ declare namespace IOrderDetail {
     items: Item[];
   }
 
-  export interface Response {
+  export interface StandardObject {
     orderId?: string;
     status?: 'NEW' | 'EXPIRED' | 'CANCELLED' | 'SUBMITTED';
     driver?: {
@@ -181,7 +181,7 @@ export const Delivery = {
   toOrderStandardObject(data: IOrderStandardObject) {
     return data;
   },
-  toOrderDetailStandardObject(data: IOrderDetail.Response) {
+  toOrderDetailStandardObject(data: IOrderDetail.StandardObject) {
     return data;
   },
 };
