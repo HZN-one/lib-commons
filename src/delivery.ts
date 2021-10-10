@@ -170,6 +170,7 @@ export namespace IOrderCancellation {
   export interface StandardObject {
     isSuccess?: boolean;
     isCancelled?: boolean;
+    message?: string;
   }
 }
 
