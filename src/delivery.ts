@@ -157,12 +157,19 @@ export namespace IOrderDetail {
       pickup?: string;
       dropoff?: string;
     };
-    isUseInsurance: boolean;
-    insuranceAmount: number;
-    isCancellable: boolean;
-    submittedAt: string;
-    completedAt: string;
-    cancelledAt: string;
+    isUseInsurance?: boolean;
+    insuranceAmount?: number;
+    isCancellable?: boolean;
+    submittedAt?: string;
+    completedAt?: string;
+    cancelledAt?: string;
+  }
+}
+
+export namespace IOrderCancellation {
+  export interface StandardObject {
+    isSuccess?: boolean;
+    isCancelled?: boolean;
   }
 }
 
