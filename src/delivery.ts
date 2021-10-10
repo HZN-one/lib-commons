@@ -73,16 +73,16 @@ export interface IOrderStandardObject {
 
 export namespace IOrderDetail {
   interface Item {
-    name: string;
-    quantity: string;
-    desecription: string;
-    price: number;
-    invoiceNo: string;
-    dimensons: {
-      height: number;
-      width: number;
-      depth: number;
-      weight: number;
+    name?: string;
+    quantity?: string;
+    desecription?: string;
+    price?: number;
+    invoiceNo?: string;
+    dimensons?: {
+      height?: number;
+      width?: number;
+      depth?: number;
+      weight?: number;
     };
   }
 
@@ -105,7 +105,7 @@ export namespace IOrderDetail {
       title?: string;
       companyName?: string;
     };
-    items: Item[];
+    items?: Item[];
   }
 
   export interface StandardObject {
@@ -134,7 +134,7 @@ export namespace IOrderDetail {
     distance?: number;
     sender?: {
       firstName?: string;
-      lastNAme?: string;
+      lastName?: string;
       email?: string;
       phone?: string;
       title?: string;
