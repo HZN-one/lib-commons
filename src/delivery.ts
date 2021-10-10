@@ -191,4 +191,7 @@ export const Delivery = {
   toOrderDetailStandardObject(data: IOrderDetail.StandardObject) {
     return data;
   },
+  toOrderCancellationStandardObject(data: IOrderCancellation.StandardObject) {
+    return data;
+  },
 };
