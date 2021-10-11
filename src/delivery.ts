@@ -1,3 +1,8 @@
+export interface IVehicleTypePartner {
+  id: string,
+  name?: string,
+}
+
 export interface IPriceStandardObject {
   name: string;
   serviceType: string;
@@ -5,6 +10,7 @@ export interface IPriceStandardObject {
   currency: string;
   amount: number;
   distance: number;
+  vehicleTypePartner?: IVehicleTypePartner;
 }
 
 export interface ICoordinate {
