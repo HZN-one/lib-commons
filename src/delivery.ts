@@ -1,6 +1,6 @@
 export interface IVehicleTypePartner {
-  id: string,
-  name?: string,
+  id: string;
+  name?: string;
 }
 
 export interface IPriceStandardObject {
@@ -114,8 +114,9 @@ export namespace IOrderDetail {
     items?: Item[];
   }
 
-  export interface StandardObject {
+  interface StandardObject {
     orderId?: string;
+    traceUrl?: string;
     status?: 'NEW' | 'EXPIRED' | 'CANCELLED' | 'SUBMITTED';
     driver?: {
       id?: string;
@@ -173,7 +174,7 @@ export namespace IOrderDetail {
 }
 
 export namespace IOrderCancellation {
-  export interface StandardObject {
+  interface StandardObject {
     isSuccess?: boolean;
     isCancelled?: boolean;
     message?: string;
