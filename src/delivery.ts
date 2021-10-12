@@ -114,7 +114,7 @@ export namespace IOrderDetail {
     items?: Item[];
   }
 
-  interface StandardObject {
+  export interface StandardObject {
     orderId?: string;
     traceUrl?: string;
     status?: 'NEW' | 'EXPIRED' | 'CANCELLED' | 'SUBMITTED';
@@ -174,7 +174,7 @@ export namespace IOrderDetail {
 }
 
 export namespace IOrderCancellation {
-  interface StandardObject {
+  export interface StandardObject {
     isSuccess?: boolean;
     isCancelled?: boolean;
     message?: string;
