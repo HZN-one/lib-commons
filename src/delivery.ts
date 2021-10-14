@@ -67,8 +67,9 @@ export interface IOrderRequestBody {
   merchantOrderId: string;
   serviceType: string;
   origin: IAddress;
-  sender: IContact;
   destinations: IDestination[];
+  sender: IContact;
+  recipient: IContact;
   hasInsurance: Boolean;
   insuranceAmount: number;
   insuranceAmountFee: number;
