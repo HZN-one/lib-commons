@@ -83,7 +83,7 @@ export interface IOrderStandardObject {
 export namespace IOrderDetail {
   interface Item {
     name?: string;
-    quantity?: string;
+    quantity?: number;
     desecription?: string;
     price?: number;
     invoiceNo?: string;
