@@ -84,7 +84,7 @@ export namespace IOrderDetail {
   interface Item {
     name?: string;
     quantity?: number;
-    desecription?: string;
+    description?: string;
     price?: number;
     invoiceNo?: string;
     dimensons?: {
