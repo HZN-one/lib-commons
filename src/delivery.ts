@@ -139,8 +139,6 @@ export namespace IOrderDetail {
       exponent?: 2;
     };
     amount: number;
-    discountAmount?: number;
-    finalAmount?: number;
     distance?: number;
     sender?: {
       firstName?: string;
