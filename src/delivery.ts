@@ -127,6 +127,10 @@ export namespace IOrderDetail {
       phone?: string;
       photo?: string;
     };
+    estimatedTimeline?: {
+      pickup?: string;
+      dropoff?: string;
+    };
   }
 }
 
