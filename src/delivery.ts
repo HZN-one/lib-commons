@@ -118,59 +118,15 @@ export namespace IOrderDetail {
   }
 
   export interface StandardObject {
-    orderId?: string;
-    traceUrl?: string;
-    status?: 'NEW' | 'EXPIRED' | 'CANCELLED' | 'SUBMITTED';
+    deliveryId?: string;
+    trackingUrl?: string;
+    status?: string;
     driver?: {
       id?: string;
       name?: string;
       phone?: string;
       photo?: string;
     };
-    vehicleType?: {
-      id?: string;
-      number?: string;
-      name?: string;
-    };
-    serviceType?: string;
-    currency?: {
-      code?: 'IDR' | 'USD';
-      symbol?: 'Rp' | 'US$';
-      exponent?: 2;
-    };
-    amount: number;
-    distance?: number;
-    sender?: {
-      firstName?: string;
-      lastName?: string;
-      email?: string;
-      phone?: string;
-      title?: string;
-      companyName?: string;
-      instruction?: string;
-    };
-    origin?: {
-      address?: string;
-      keywords?: string;
-      coordinate?: {
-        latitude?: number;
-        longitude?: number;
-      };
-      city?: string;
-      district?: string;
-      postalCode?: string;
-    };
-    destinations?: Destination[];
-    estimatedTimeline?: {
-      pickup?: string;
-      dropoff?: string;
-    };
-    isUseInsurance?: boolean;
-    insuranceAmount?: number;
-    isCancellable?: boolean;
-    submittedAt?: string;
-    completedAt?: string;
-    cancelledAt?: string;
   }
 }
 
