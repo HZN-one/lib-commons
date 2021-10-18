@@ -138,7 +138,7 @@ export namespace IOrderDetail {
       symbol?: 'Rp' | 'US$';
       exponent?: 2;
     };
-    amount?: number;
+    amount: number;
     discountAmount?: number;
     finalAmount?: number;
     distance?: number;
