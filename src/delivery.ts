@@ -80,42 +80,6 @@ export interface IOrderStandardObject {
 }
 
 export namespace IOrderDetail {
-  interface Item {
-    name?: string;
-    quantity?: number;
-    description?: string;
-    price?: number;
-    invoiceNo?: string;
-    dimensons?: {
-      height?: number;
-      width?: number;
-      depth?: number;
-      weight?: number;
-    };
-  }
-
-  interface Destination {
-    deliveryId?: string;
-    address?: string;
-    keywords?: string;
-    coordinates?: {
-      latitude?: number;
-      longitude?: number;
-    };
-    city?: string;
-    district?: string;
-    postalCode?: string;
-    recipient?: {
-      firstName?: string;
-      lastName?: string;
-      email?: string;
-      phone?: string;
-      title?: string;
-      companyName?: string;
-    };
-    items?: Item[];
-  }
-
   export interface StandardObject {
     deliveryId?: string;
     trackingUrl?: string;
