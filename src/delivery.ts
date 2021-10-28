@@ -60,7 +60,6 @@ export interface IPriceRequestBody {
   sender: IContact;
   origin: IAddress;
   destinations: IDestination[];
-  packages?: IItem[];
 }
 
 export interface IOrderRequestBody {
