@@ -68,10 +68,9 @@ export interface IOrderRequestBody {
   origin: IAddress;
   destinations: IDestination[];
   sender: IContact;
-  recipient: IContact;
-  hasInsurance: Boolean;
-  insuranceAmount: number;
-  insuranceAmountFee: number;
+  hasInsurance?: Boolean;
+  insuranceAmount?: number;
+  insuranceAmountFee?: number;
 }
 
 export interface IOrderStandardObject {

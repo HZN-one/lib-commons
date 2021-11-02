@@ -19,6 +19,6 @@
   "author": "PT HZN Teknologi Indonesia",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^16.10.3"
+    "@types/node": "^16.11.6"
   }
 }
