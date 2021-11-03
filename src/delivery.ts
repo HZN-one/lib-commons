@@ -11,7 +11,7 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  meta?: Object;
+  meta?: any;
 }
 
 export interface ICoordinate {
@@ -72,7 +72,7 @@ export interface IOrderRequestBody {
   hasInsurance?: Boolean;
   insuranceAmount?: number;
   insuranceAmountFee?: number;
-  meta?: Object;
+  meta?: any;
 }
 
 export interface IOrderStandardObject {
