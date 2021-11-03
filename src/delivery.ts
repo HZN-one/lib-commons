@@ -72,6 +72,7 @@ export interface IOrderRequestBody {
   hasInsurance?: Boolean;
   insuranceAmount?: number;
   insuranceAmountFee?: number;
+  meta?: Object;
 }
 
 export interface IOrderStandardObject {
