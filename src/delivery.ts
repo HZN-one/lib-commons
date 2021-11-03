@@ -11,6 +11,7 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
+  meta?: Object;
 }
 
 export interface ICoordinate {
