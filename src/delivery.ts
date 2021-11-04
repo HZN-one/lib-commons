@@ -58,7 +58,8 @@ export interface IDestination extends IAddress {
 
 export interface IPriceRequestBody {
   serviceType?: string;
-  sender: IContact;
+  vehicleType?: string;
+  sender?: IContact;
   origin: IAddress;
   destinations: IDestination[];
 }
