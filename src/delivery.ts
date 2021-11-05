@@ -59,6 +59,8 @@ export interface IDestination extends IAddress {
 export interface IPriceRequestBody {
   serviceType?: string;
   vehicleType?: string;
+  serviceTypeCategory?: "instant" | "sameday";
+  vehicleTypeCategory?: "bike" | "car";
   sender?: IContact;
   origin: IAddress;
   destinations: IDestination[];
