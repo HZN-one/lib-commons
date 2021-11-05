@@ -11,6 +11,8 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
+  serviceTypeCategory?: "instant" | "sameday";
+  vehicleTypeCategory?: "bike" | "car";
   meta?: any;
 }
 
@@ -59,8 +61,6 @@ export interface IDestination extends IAddress {
 export interface IPriceRequestBody {
   serviceType?: string;
   vehicleType?: string;
-  serviceTypeCategory?: "instant" | "sameday";
-  vehicleTypeCategory?: "bike" | "car";
   sender?: IContact;
   origin: IAddress;
   destinations: IDestination[];
