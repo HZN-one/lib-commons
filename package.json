@@ -1,6 +1,6 @@
 {
   "name": "@hzn-one/commons",
-  "version": "1.0.38",
+  "version": "1.0.39",
   "description": "A npm package that provide a common function and interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
