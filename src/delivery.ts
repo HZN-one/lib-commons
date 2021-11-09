@@ -69,6 +69,7 @@ export interface IPriceRequestBody {
 export interface IOrderRequestBody {
   merchantOrderId: string;
   serviceType: string;
+  vehicleType?: string;
   origin: IAddress;
   destinations: IDestination[];
   sender: IContact;
