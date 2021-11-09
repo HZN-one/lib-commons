@@ -25,6 +25,7 @@ export interface IAddress {
   address?: string;
   keywords?: string;
   coordinate: ICoordinate;
+  province?: string;
   city?: string;
   district?: string;
   postalCode?: string;
