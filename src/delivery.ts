@@ -11,8 +11,8 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  serviceTypeCategory?: "instant" | "sameday" | "regular" | "nextday";
-  vehicleTypeCategory?: "bike" | "car";
+  serviceTypeCategory?: 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
+  vehicleTypeCategory?: 'bike' | 'car';
   meta?: any;
 }
 
