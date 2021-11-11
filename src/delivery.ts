@@ -82,6 +82,7 @@ export interface IOrderRequestBody {
 
 export interface IOrderStandardObject {
   deliveryId: string;
+  meta?: any;
 }
 
 export namespace IOrderDetail {
