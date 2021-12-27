@@ -114,11 +114,12 @@ export namespace IOrderCancellation {
 export namespace IOrderWebhook {
   export interface Track {
     status: string;
-    timestamp: number;
+    timestamp?: number;
   }
 
   export interface StandardObject {
     tracks: Track[];
+    meta?: any;
   }
 }
 
