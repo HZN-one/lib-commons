@@ -111,6 +111,17 @@ export namespace IOrderCancellation {
   }
 }
 
+export namespace IOrderWebhook {
+  export interface Track {
+    status: string;
+    timestamp: number;
+  }
+
+  export interface StandardObject {
+    tracks: Track[];
+  }
+}
+
 export const Delivery = {
   /**
    * A function to standarize a price object
