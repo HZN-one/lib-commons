@@ -112,8 +112,27 @@ export namespace IOrderCancellation {
 }
 
 export namespace IOrderWebhook {
+  export type HZNStatus =
+    | ''
+    | 'NEW ORDER'
+    | 'ALLOCATING'
+    | 'REJECTED'
+    | 'DRIVER ASSIGNED'
+    | 'PICKING UP'
+    | 'DRIVER NOT FOUND'
+    | 'ITEM PICKED'
+    | 'ON DELIVERY'
+    | 'RECEIVED'
+    | 'COMPLETED'
+    | 'REACTIVATED'
+    | 'ON HOLD'
+    | 'CANCELLED'
+    | 'DELAYED'
+    | 'EXPIRED'
+    | 'RETURNED'
+    | 'FAILED';
   export interface StandardObject {
-    status: string;
+    status: HZNStatus;
     timestamp?: number;
     meta?: any;
   }
