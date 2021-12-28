@@ -131,8 +131,8 @@ export namespace IOrderWebhook {
     | 'EXPIRED'
     | 'RETURNED'
     | 'FAILED';
-  export interface StandardObject {
-    status: HZNStatus;
+  export interface StandardObject extends IOrderDetail.StandardObject {
+    status?: HZNStatus;
     timestamp?: number;
     meta?: any;
   }
