@@ -30,6 +30,7 @@ export const Http = {
         status: isSuccess ? "success" : "failed",
         message: isSuccess && message === "" ? "ok" : message,
       },
+      data,
     };
 
     if (stack !== "") result.stack = stack;
