@@ -32,8 +32,6 @@ export const Http = {
       },
     };
 
-    if (isSuccess) result.data = data;
-
     if (stack !== "") result.stack = stack;
 
     return result;
