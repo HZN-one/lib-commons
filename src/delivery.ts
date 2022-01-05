@@ -11,8 +11,8 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  serviceTypeCategory?: "instant" | "sameday" | "regular" | "nextday";
-  vehicleTypeCategory?: "bike" | "car";
+  serviceTypeCategory?: 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
+  vehicleTypeCategory?: 'bike' | 'car';
   meta?: any;
 }
 
@@ -25,6 +25,7 @@ export interface IAddress {
   address?: string;
   keywords?: string;
   coordinate: ICoordinate;
+  province?: string;
   city?: string;
   district?: string;
   postalCode?: string;
@@ -81,6 +82,7 @@ export interface IOrderRequestBody {
 
 export interface IOrderStandardObject {
   deliveryId: string;
+  meta?: any;
 }
 
 export namespace IOrderDetail {
@@ -106,6 +108,33 @@ export namespace IOrderCancellation {
     isSuccess?: boolean;
     isCancelled?: boolean;
     message?: string;
+  }
+}
+
+export namespace IOrderWebhook {
+  export type HZNStatus =
+    | ''
+    | 'NEW ORDER'
+    | 'ALLOCATING'
+    | 'REJECTED'
+    | 'DRIVER ASSIGNED'
+    | 'PICKING UP'
+    | 'DRIVER NOT FOUND'
+    | 'ITEM PICKED'
+    | 'ON DELIVERY'
+    | 'RECEIVED'
+    | 'COMPLETED'
+    | 'REACTIVATED'
+    | 'ON HOLD'
+    | 'CANCELLED'
+    | 'DELAYED'
+    | 'EXPIRED'
+    | 'RETURNED'
+    | 'FAILED';
+  export interface StandardObject extends IOrderDetail.StandardObject {
+    status?: HZNStatus;
+    timestamp?: number;
+    meta?: any;
   }
 }
 
