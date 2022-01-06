@@ -11,8 +11,13 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  serviceTypeCategory?: 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
-  vehicleTypeCategory?: 'bike' | 'car';
+  serviceTypeCategory?:
+    | "instant"
+    | "sameday"
+    | "regular"
+    | "nextday"
+    | "economy";
+  vehicleTypeCategory?: "bike" | "car" | "other";
   meta?: any;
 }
 
@@ -113,24 +118,24 @@ export namespace IOrderCancellation {
 
 export namespace IOrderWebhook {
   export type HZNStatus =
-    | ''
-    | 'NEW ORDER'
-    | 'ALLOCATING'
-    | 'REJECTED'
-    | 'DRIVER ASSIGNED'
-    | 'PICKING UP'
-    | 'DRIVER NOT FOUND'
-    | 'ITEM PICKED'
-    | 'ON DELIVERY'
-    | 'RECEIVED'
-    | 'COMPLETED'
-    | 'REACTIVATED'
-    | 'ON HOLD'
-    | 'CANCELLED'
-    | 'DELAYED'
-    | 'EXPIRED'
-    | 'RETURNED'
-    | 'FAILED';
+    | ""
+    | "NEW ORDER"
+    | "ALLOCATING"
+    | "REJECTED"
+    | "DRIVER ASSIGNED"
+    | "PICKING UP"
+    | "DRIVER NOT FOUND"
+    | "ITEM PICKED"
+    | "ON DELIVERY"
+    | "RECEIVED"
+    | "COMPLETED"
+    | "REACTIVATED"
+    | "ON HOLD"
+    | "CANCELLED"
+    | "DELAYED"
+    | "EXPIRED"
+    | "RETURNED"
+    | "FAILED";
   export interface StandardObject extends IOrderDetail.StandardObject {
     status?: HZNStatus;
     timestamp?: number;
