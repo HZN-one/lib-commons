@@ -11,13 +11,8 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  serviceTypeCategory?:
-    | "instant"
-    | "sameday"
-    | "regular"
-    | "nextday"
-    | "economy";
-  vehicleTypeCategory?: "bike" | "car" | "other";
+  serviceTypeCategory?: 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
+  vehicleTypeCategory?: 'bike' | 'car' | 'other';
   meta?: any;
 }
 
@@ -118,24 +113,44 @@ export namespace IOrderCancellation {
 
 export namespace IOrderWebhook {
   export type HZNStatus =
-    | ""
-    | "NEW ORDER"
-    | "ALLOCATING"
-    | "REJECTED"
-    | "DRIVER ASSIGNED"
-    | "PICKING UP"
-    | "DRIVER NOT FOUND"
-    | "ITEM PICKED"
-    | "ON DELIVERY"
-    | "RECEIVED"
-    | "COMPLETED"
-    | "REACTIVATED"
-    | "ON HOLD"
-    | "CANCELLED"
-    | "DELAYED"
-    | "EXPIRED"
-    | "RETURNED"
-    | "FAILED";
+    | ''
+    | 'NEW ORDER'
+    | 'ALLOCATING'
+    | 'REJECTED'
+    | 'DRIVER ASSIGNED'
+    | 'PICKING UP'
+    | 'DRIVER NOT FOUND'
+    | 'ITEM PICKED'
+    | 'ON DELIVERY'
+    | 'RECEIVED'
+    | 'COMPLETED'
+    | 'REACTIVATED'
+    | 'ON HOLD'
+    | 'CANCELLED'
+    | 'DELAYED'
+    | 'EXPIRED'
+    | 'RETURNED'
+    | 'FAILED'
+    | 'ORDER MANIFESTED'
+    | 'ALLOCATING COURRIER'
+    | 'COURRIER EN-ROUTE TO PICKUP'
+    | 'PICKUP SUCCEDED'
+    | 'PICKUP FAILED'
+    | 'REASSIGN COURRIER'
+    | 'ARRIVED AT SORTING HUB'
+    | 'ON PROCESS AT SORTING HUB'
+    | 'DEPARTED FROM SORTING HUB'
+    | 'SHIPMENT ARRIVED'
+    | 'SHIPMENT IN TRANSIT'
+    | 'DEPARTED TO DESTINATION'
+    | 'SHIPMENT RECEIVED'
+    | 'CANCEL BY SYSTEM'
+    | 'CANCEL BY ADMIN'
+    | 'CANCEL BY USER'
+    | 'ON HOLD'
+    | 'SHIPMENT RETURNED'
+    | 'RETURNED TO SENDER';
+
   export interface StandardObject extends IOrderDetail.StandardObject {
     status?: HZNStatus;
     timestamp?: number;
