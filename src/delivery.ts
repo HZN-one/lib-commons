@@ -3,6 +3,8 @@ export interface IVehicleTypePartner {
   name?: string;
 }
 
+export type IServiceTypeCategory = 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
+export type IVehicleTypeCategory = 'bike' | 'car' | 'other';
 export interface IPriceStandardObject {
   name: string;
   serviceType: string;
@@ -11,8 +13,8 @@ export interface IPriceStandardObject {
   amount: number;
   distance: number;
   vehicleTypePartner?: IVehicleTypePartner;
-  serviceTypeCategory?: 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
-  vehicleTypeCategory?: 'bike' | 'car' | 'other';
+  serviceTypeCategory?: IServiceTypeCategory;
+  vehicleTypeCategory?: IVehicleTypeCategory;
   meta?: any;
 }
 
