@@ -43,4 +43,4 @@ const HznStatusCollection: IOrderWebhook.HZNStatus[] = [
   'RETURNED TO SENDER',
 ];
 
-export const DeliveryImple = { ServiceTypeCategoryCollection, VehicleTypeCategoryCollection, HznStatusCollection };
+export const Collection = { ServiceTypeCategoryCollection, VehicleTypeCategoryCollection, HznStatusCollection };
