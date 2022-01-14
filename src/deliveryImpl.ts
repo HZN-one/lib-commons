@@ -2,7 +2,6 @@ import { IOrderWebhook, IServiceTypeCategory, IVehicleTypeCategory } from '.';
 
 const ServiceTypeCategoryCollection: IServiceTypeCategory[] = ['instant', 'sameday', 'regular', 'nextday', 'economy'];
 const VehicleTypeCategoryCollection: IVehicleTypeCategory[] = ['bike', 'car', 'other'];
-
 const HznStatusCollection: IOrderWebhook.HZNStatus[] = [
   '',
   'NEW ORDER',
@@ -44,4 +43,4 @@ const HznStatusCollection: IOrderWebhook.HZNStatus[] = [
   'RETURNED TO SENDER',
 ];
 
-export { ServiceTypeCategoryCollection, VehicleTypeCategoryCollection, HznStatusCollection };
+export const DeliveryImple = { ServiceTypeCategoryCollection, VehicleTypeCategoryCollection, HznStatusCollection };
