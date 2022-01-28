@@ -105,6 +105,10 @@ export namespace IOrderDetail {
   }
 }
 
+export interface ICancelRequestBody {
+  reason?: string;
+}
+
 export namespace IOrderCancellation {
   export interface StandardObject {
     isSuccess?: boolean;
