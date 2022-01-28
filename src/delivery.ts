@@ -76,7 +76,7 @@ export interface IOrderRequestBody {
   origin: IAddress;
   destinations: IDestination[];
   sender: IContact;
-  hasInsurance?: Boolean;
+  hasInsurance?: boolean;
   insuranceAmount?: number;
   insuranceAmountFee?: number;
   meta?: any;
@@ -154,7 +154,6 @@ export namespace IOrderWebhook {
     | 'CANCEL BY SYSTEM'
     | 'CANCEL BY ADMIN'
     | 'CANCEL BY USER'
-    | 'ON HOLD'
     | 'SHIPMENT RETURNED'
     | 'RETURNED TO SENDER';
 
