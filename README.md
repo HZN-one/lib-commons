@@ -14,14 +14,15 @@ A npm package that provide a common function and interface
 
 ## Exported Method
 
-| Class                          | Description                                          |
-| ------------------------------ | ---------------------------------------------------- |
-| Http.response                  | A function to standarize the http response           |
-| Map.distance                   | A function to calculate distance between 2 locations |
-| Util.pick                      | A function to pick some property from object         |
-| ApiError                       | A class for API Error object                         |
-| Delivery.toPriceStandardObject | A function to standarize price object                |
-| Delivery.toOrderStandardObject | A function to standarize order object                |
+| Class                          | Description                                              |
+| ------------------------------ | -------------------------------------------------------- |
+| Http.response                  | A function to standarize the http response               |
+| Map.distance                   | A function to calculate distance between 2 locations     |
+| Map.recommendationRoute        | A function to find optimize route between some locations |
+| Util.pick                      | A function to pick some property from object             |
+| ApiError                       | A class for API Error object                             |
+| Delivery.toPriceStandardObject | A function to standarize price object                    |
+| Delivery.toOrderStandardObject | A function to standarize order object                    |
 
 ## Exported Interface
 
