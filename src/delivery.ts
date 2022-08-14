@@ -3,12 +3,22 @@ export interface IVehicleTypePartner {
   name?: string;
 }
 
-export type IServiceTypeCategory = 'instant' | 'sameday' | 'regular' | 'nextday' | 'economy';
-export type IVehicleTypeCategory = 'bike' | 'car' | 'other';
-export interface IPriceStandardObject {
+export type IServiceTypeCategory =
+  | "instant"
+  | "sameday"
+  | "regular"
+  | "nextday"
+  | "economy";
+
+export type IVehicleTypeCategory = "bike" | "car" | "other";
+
+export interface IPriceStandardObject<
+  TServiceType = string,
+  TVehicleType = string
+> {
   name: string;
-  serviceType: string;
-  vehicleType: string;
+  serviceType: TServiceType;
+  vehicleType: TVehicleType;
   currency: string;
   amount: number;
   distance: number;
@@ -61,9 +71,12 @@ export interface IDestination extends IAddress {
   items: IItem[];
 }
 
-export interface IPriceRequestBody {
-  serviceType?: string;
-  vehicleType?: string;
+export interface IPriceRequestBody<
+  TServiceType = string,
+  TVehicleType = string
+> {
+  serviceType?: TServiceType;
+  vehicleType?: TVehicleType;
   sender?: IContact;
   origin: IAddress;
   destinations: IDestination[];
@@ -83,13 +96,33 @@ export interface IOrderRequestBody {
 }
 
 export interface IOrderStandardObject {
+  /**
+   * Possibly the value same as the receipt number.
+   */
   deliveryId: string;
+  /**
+   * Must fill this property when AWB/receipt exists in order creation result.
+   * Some partners use the same value between delivery ID and receipt number
+   */
+  receiptNumber?: string;
+  /**
+   * A final fee that will not change until an order complete
+   */
+  finalFee?: number;
   meta?: any;
 }
 
 export namespace IOrderDetail {
   export interface StandardObject {
+    /**
+     * Possibly the value same as the receipt number.
+     */
     deliveryId?: string;
+    /**
+     * Must fill this property when AWB/receipt exists in order creation result.
+     * Some partners use the same value between delivery ID and receipt number
+     */
+    receiptNumber?: string;
     trackingUrl?: string;
     status?: string;
     driver?: {
@@ -101,6 +134,10 @@ export namespace IOrderDetail {
     estimatedTimeline?: {
       pickup?: string;
       dropoff?: string;
+    };
+    photo?: {
+      deliveryProofs?: string[];
+      signatures?: string;
     };
   }
 }
@@ -119,43 +156,43 @@ export namespace IOrderCancellation {
 
 export namespace IOrderWebhook {
   export type HZNStatus =
-    | ''
-    | 'NEW ORDER'
-    | 'ALLOCATING'
-    | 'REJECTED'
-    | 'DRIVER ASSIGNED'
-    | 'PICKING UP'
-    | 'DRIVER NOT FOUND'
-    | 'ITEM PICKED'
-    | 'ON DELIVERY'
-    | 'RECEIVED'
-    | 'COMPLETED'
-    | 'REACTIVATED'
-    | 'ON HOLD'
-    | 'CANCELLED'
-    | 'DELAYED'
-    | 'EXPIRED'
-    | 'RETURNED'
-    | 'FAILED'
-    | 'ORDER MANIFESTED'
-    | 'ALLOCATING COURRIER'
-    | 'COURRIER EN-ROUTE TO PICKUP'
-    | 'PICKUP SUCCEDED'
-    | 'PICKUP FAILED'
-    | 'REASSIGN COURRIER'
-    | 'ARRIVED AT SORTING HUB'
-    | 'ON PROCESS AT SORTING HUB'
-    | 'DEPARTED FROM SORTING HUB'
-    | 'SHIPMENT ARRIVED IN DESTINATION CITY'
-    | 'SHIPMENT IN TRANSIT'
-    | 'DEPARTED TO DESTINATION'
-    | 'SHIPMENT RECEIVED'
-    | 'SHIPMENT FAILED'
-    | 'CANCEL BY SYSTEM'
-    | 'CANCEL BY ADMIN'
-    | 'CANCEL BY USER'
-    | 'SHIPMENT RETURNED'
-    | 'RETURNED TO SENDER';
+    | ""
+    | "NEW ORDER"
+    | "ALLOCATING"
+    | "REJECTED"
+    | "DRIVER ASSIGNED"
+    | "PICKING UP"
+    | "DRIVER NOT FOUND"
+    | "ITEM PICKED"
+    | "ON DELIVERY"
+    | "RECEIVED"
+    | "COMPLETED"
+    | "REACTIVATED"
+    | "ON HOLD"
+    | "CANCELLED"
+    | "DELAYED"
+    | "EXPIRED"
+    | "RETURNED"
+    | "FAILED"
+    | "ORDER MANIFESTED"
+    | "ALLOCATING COURRIER"
+    | "COURRIER EN-ROUTE TO PICKUP"
+    | "PICKUP SUCCEDED"
+    | "PICKUP FAILED"
+    | "REASSIGN COURRIER"
+    | "ARRIVED AT SORTING HUB"
+    | "ON PROCESS AT SORTING HUB"
+    | "DEPARTED FROM SORTING HUB"
+    | "SHIPMENT ARRIVED IN DESTINATION CITY"
+    | "SHIPMENT IN TRANSIT"
+    | "DEPARTED TO DESTINATION"
+    | "SHIPMENT RECEIVED"
+    | "SHIPMENT FAILED"
+    | "CANCEL BY SYSTEM"
+    | "CANCEL BY ADMIN"
+    | "CANCEL BY USER"
+    | "SHIPMENT RETURNED"
+    | "RETURNED TO SENDER";
 
   export interface StandardObject extends IOrderDetail.StandardObject {
     status?: HZNStatus;
