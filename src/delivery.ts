@@ -82,10 +82,13 @@ export interface IPriceRequestBody<
   destinations: IDestination[];
 }
 
-export interface IOrderRequestBody {
+export interface IOrderRequestBody<
+  TServiceType = string,
+  TVehicleType = string
+> {
   merchantOrderId: string;
-  serviceType: string;
-  vehicleType?: string;
+  serviceType: TServiceType;
+  vehicleType?: TVehicleType;
   origin: IAddress;
   destinations: IDestination[];
   sender: IContact;
