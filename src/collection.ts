@@ -1,8 +1,8 @@
-import { IOrderWebhook, IServiceTypeCategory, IVehicleTypeCategory } from '.';
+import { IServiceTypeCategory, IVehicleTypeCategory, HZNStatus } from '.';
 
 const ServiceTypeCategoryCollection: IServiceTypeCategory[] = ['instant', 'sameday', 'regular', 'nextday', 'economy'];
 const VehicleTypeCategoryCollection: IVehicleTypeCategory[] = ['bike', 'car', 'other'];
-const HznStatusCollection: IOrderWebhook.HZNStatus[] = [
+const HznStatusCollection: HZNStatus[] = [
   '',
   'NEW ORDER',
   'ALLOCATING',
