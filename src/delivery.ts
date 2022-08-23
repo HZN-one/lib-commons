@@ -8,24 +8,98 @@ export type IServiceTypeCategory =
   | "sameday"
   | "regular"
   | "nextday"
-  | "economy";
+  | "economy"
+  | "cargo";
 
 export type IVehicleTypeCategory = "bike" | "car" | "other";
+
+export type HZNStatus =
+    | ""
+    | "NEW ORDER"
+    | "ALLOCATING"
+    | "REJECTED"
+    | "DRIVER ASSIGNED"
+    | "PICKING UP"
+    | "DRIVER NOT FOUND"
+    | "ITEM PICKED"
+    | "ON DELIVERY"
+    | "RECEIVED"
+    | "COMPLETED"
+    | "REACTIVATED"
+    | "ON HOLD"
+    | "CANCELLED"
+    | "DELAYED"
+    | "EXPIRED"
+    | "RETURNED"
+    | "FAILED"
+    | "ORDER MANIFESTED"
+    | "ALLOCATING COURRIER"
+    | "COURRIER EN-ROUTE TO PICKUP"
+    | "PICKUP SUCCEDED"
+    | "PICKUP FAILED"
+    | "REASSIGN COURRIER"
+    | "ARRIVED AT SORTING HUB"
+    | "ON PROCESS AT SORTING HUB"
+    | "DEPARTED FROM SORTING HUB"
+    | "SHIPMENT ARRIVED IN DESTINATION CITY"
+    | "SHIPMENT IN TRANSIT"
+    | "DEPARTED TO DESTINATION"
+    | "SHIPMENT RECEIVED"
+    | "SHIPMENT FAILED"
+    | "CANCEL BY SYSTEM"
+    | "CANCEL BY ADMIN"
+    | "CANCEL BY USER"
+    | "SHIPMENT RETURNED"
+    | "RETURNED TO SENDER";
 
 export interface IPriceStandardObject<
   TServiceType = string,
   TVehicleType = string
 > {
+  /**
+   * Partner name
+   */
   name: string;
+  /**
+   * Partner service type
+   * example: sameday, SAME_DAY, standard, etc
+   */
   serviceType: TServiceType;
+  /**
+   * Vehicle type for partner
+   * example: 
+   * - Borzo use 1, 2, 8
+   * - Grab use bike
+   * - Partner like JNE, JNT use "other"
+   * 
+   * Only use "other" if user can't determine what's tranportation that used
+   */
   vehicleType: TVehicleType;
+  /**
+   * Currency, example: IDR
+   */
   currency: string;
+  /**
+   * A delivery price
+   */
   amount: number;
+  /**
+   * A distance in KM
+   */
   distance: number;
-  vehicleTypePartner?: IVehicleTypePartner;
+  /**
+   * Grouping a service type to hzn category
+   * Please see the doc to determine a category
+   */
   serviceTypeCategory?: IServiceTypeCategory;
+  /**
+   * Grouping a vehicle type to hzn category
+   * Please see the doc to determine a category or ask to PM about category
+   * 
+   * For partner like JNE, JNT use "other"
+   * Only use "other" if user can't determine what's tranportation that used
+   */
   vehicleTypeCategory?: IVehicleTypeCategory;
-  meta?: any;
 }
 
 export interface ICoordinate {
@@ -112,7 +186,6 @@ export interface IOrderStandardObject {
    * A final fee that will not change until an order complete
    */
   finalFee?: number;
-  meta?: any;
 }
 
 export namespace IOrderDetail {
@@ -158,49 +231,24 @@ export namespace IOrderCancellation {
 }
 
 export namespace IOrderWebhook {
-  export type HZNStatus =
-    | ""
-    | "NEW ORDER"
-    | "ALLOCATING"
-    | "REJECTED"
-    | "DRIVER ASSIGNED"
-    | "PICKING UP"
-    | "DRIVER NOT FOUND"
-    | "ITEM PICKED"
-    | "ON DELIVERY"
-    | "RECEIVED"
-    | "COMPLETED"
-    | "REACTIVATED"
-    | "ON HOLD"
-    | "CANCELLED"
-    | "DELAYED"
-    | "EXPIRED"
-    | "RETURNED"
-    | "FAILED"
-    | "ORDER MANIFESTED"
-    | "ALLOCATING COURRIER"
-    | "COURRIER EN-ROUTE TO PICKUP"
-    | "PICKUP SUCCEDED"
-    | "PICKUP FAILED"
-    | "REASSIGN COURRIER"
-    | "ARRIVED AT SORTING HUB"
-    | "ON PROCESS AT SORTING HUB"
-    | "DEPARTED FROM SORTING HUB"
-    | "SHIPMENT ARRIVED IN DESTINATION CITY"
-    | "SHIPMENT IN TRANSIT"
-    | "DEPARTED TO DESTINATION"
-    | "SHIPMENT RECEIVED"
-    | "SHIPMENT FAILED"
-    | "CANCEL BY SYSTEM"
-    | "CANCEL BY ADMIN"
-    | "CANCEL BY USER"
-    | "SHIPMENT RETURNED"
-    | "RETURNED TO SENDER";
-
-  export interface StandardObject extends IOrderDetail.StandardObject {
-    status?: HZNStatus;
-    timestamp?: number;
-    meta?: any;
+  export interface StandardObject<TMeta = any> {
+    /**
+     * An ID regarding a delivery
+     * Example: Grab use "deliveryID", NCS use "reffno / ReferenceNumber"
+     */
+    deliveryId: string;
+    /**
+     * HZN Delivery status
+     */
+    status: HZNStatus;
+    /**
+     * Notification created at
+     */
+    timestamp: number;
+    /**
+     * Contains data regarding detail tracking from partner
+     */
+    meta?: TMeta;
   }
 }
 
