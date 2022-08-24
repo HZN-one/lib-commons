@@ -1,6 +1,6 @@
 import { IServiceTypeCategory, IVehicleTypeCategory, HZNDeliveryStatus } from '.';
 
-const ServiceTypeCategoryCollection: IServiceTypeCategory[] = ['instant', 'sameday', 'regular', 'nextday', 'economy'];
+const ServiceTypeCategoryCollection: IServiceTypeCategory[] = ['instant', 'sameday', 'regular', 'nextday', 'economy', 'cargo'];
 const VehicleTypeCategoryCollection: IVehicleTypeCategory[] = ['bike', 'car', 'other'];
 const HznStatusCollection: HZNDeliveryStatus[] = [
   '',
