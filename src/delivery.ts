@@ -13,44 +13,25 @@ export type IServiceTypeCategory =
 
 export type IVehicleTypeCategory = "bike" | "car" | "other";
 
-export type HZNStatus =
-    | ""
-    | "NEW ORDER"
-    | "ALLOCATING"
-    | "REJECTED"
-    | "DRIVER ASSIGNED"
-    | "PICKING UP"
-    | "DRIVER NOT FOUND"
-    | "ITEM PICKED"
-    | "ON DELIVERY"
-    | "RECEIVED"
-    | "COMPLETED"
-    | "REACTIVATED"
-    | "ON HOLD"
-    | "CANCELLED"
-    | "DELAYED"
-    | "EXPIRED"
-    | "RETURNED"
-    | "FAILED"
-    | "ORDER MANIFESTED"
-    | "ALLOCATING COURRIER"
-    | "COURRIER EN-ROUTE TO PICKUP"
-    | "PICKUP SUCCEDED"
-    | "PICKUP FAILED"
-    | "REASSIGN COURRIER"
-    | "ARRIVED AT SORTING HUB"
-    | "ON PROCESS AT SORTING HUB"
-    | "DEPARTED FROM SORTING HUB"
-    | "SHIPMENT ARRIVED IN DESTINATION CITY"
-    | "SHIPMENT IN TRANSIT"
-    | "DEPARTED TO DESTINATION"
-    | "SHIPMENT RECEIVED"
-    | "SHIPMENT FAILED"
-    | "CANCEL BY SYSTEM"
-    | "CANCEL BY ADMIN"
-    | "CANCEL BY USER"
-    | "SHIPMENT RETURNED"
-    | "RETURNED TO SENDER";
+export type HZNDeliveryStatus =
+  | ""
+  | "NEW ORDER"
+  | "ALLOCATING"
+  | "REJECTED"
+  | "DRIVER ASSIGNED"
+  | "PICKING UP"
+  | "DRIVER NOT FOUND"
+  | "ITEM PICKED"
+  | "ON DELIVERY"
+  | "RECEIVED"
+  | "COMPLETED"
+  | "REACTIVATED"
+  | "ON HOLD"
+  | "CANCELLED"
+  | "DELAYED"
+  | "EXPIRED"
+  | "RETURNED"
+  | "FAILED";
 
 export interface IPriceStandardObject<
   TServiceType = string,
@@ -67,11 +48,11 @@ export interface IPriceStandardObject<
   serviceType: TServiceType;
   /**
    * Vehicle type for partner
-   * example: 
+   * example:
    * - Borzo use 1, 2, 8
    * - Grab use bike
    * - Partner like JNE, JNT use "other"
-   * 
+   *
    * Only use "other" if user can't determine what's tranportation that used
    */
   vehicleType: TVehicleType;
@@ -95,7 +76,7 @@ export interface IPriceStandardObject<
   /**
    * Grouping a vehicle type to hzn category
    * Please see the doc to determine a category or ask to PM about category
-   * 
+   *
    * For partner like JNE, JNT use "other"
    * Only use "other" if user can't determine what's tranportation that used
    */
@@ -240,7 +221,7 @@ export namespace IOrderWebhook {
     /**
      * HZN Delivery status
      */
-    status: HZNStatus;
+    status: HZNDeliveryStatus;
     /**
      * Notification created at
      */
