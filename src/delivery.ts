@@ -84,17 +84,32 @@ export interface IPriceStandardObject<
 }
 
 export interface ICoordinate {
+  /**
+   * Latitude
+   * min: -90, max: 90
+   */
   latitude: number;
+  /**
+   * Longitude
+   * min: -180, max: 180
+   */
   longitude: number;
 }
 
 export interface IAddress {
+  /**
+   * Full address
+   */
   address?: string;
+  /**
+   * Building name / Shop name i.e. PQR Tower
+   */
   keywords?: string;
   coordinate: ICoordinate;
   province?: string;
   city?: string;
   district?: string;
+  village?: string;
   postalCode?: string;
 }
 
@@ -105,6 +120,9 @@ export interface IContact {
   phone: string;
   title?: string;
   companyName?: string;
+  /**
+   * Instruction / notes
+   */
   instruction?: string;
 }
 
