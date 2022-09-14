@@ -6,3 +6,4 @@ export * from "./util";
 export * from "./collection";
 export * from "./joi";
 export * from "./definition";
+export * from "./log";
