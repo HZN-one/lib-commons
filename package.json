@@ -20,5 +20,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.11.6"
+  },
+  "dependencies": {
+    "joi": "^17.6.0",
+    "joi-password": "^4.0.0"
   }
 }
