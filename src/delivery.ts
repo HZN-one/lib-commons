@@ -153,6 +153,7 @@ export interface IPriceRequestBody<
   sender?: IContact;
   origin: IAddress;
   destinations: IDestination[];
+  priority?: boolean;
 }
 
 export interface IOrderRequestBody<
